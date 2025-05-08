@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap');
+
+body {
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  background-color: #ebf4f8;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+/* 左サイドのデスクトップ用ナビ */
+#desktopNav {
+  position: fixed;
+  top: 0;
+  left: 20px;
+  width: 180px;
+  height: 100vh;
+  background-color: #ebf4f8;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 60px;
+  padding-left: 10px;
+  z-index: 100;
+}
+
+.logo-container {
+  width: 120px;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 100%;
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.nav-list li {
+  margin: 12px 0;
+}
+
+.nav-list a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+  transition: color 0.3s ease;
+  line-height: 1.3;
+  display: block;
+  padding-left: 10px;
+}
+
+.nav-list a.active {
+ background-color: #deff28;
+ padding: 10px;
+
+}
+
+.nav-list a:hover {
+  color: #ff9d87;
+}
+
+main {
+  margin-left: 200px;
+  padding: 60px 40px;
+  width: calc(100% - 200px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* スライドショー */
+.background-slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  margin-bottom: 40px;
+  z-index: -1;
+}
+
+.bg-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 3s ease-in-out;
+}
+
+.bg-slide.active {
+  opacity: 1;
+}
+
+/* セクションアニメーション */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.catchcopy {
+  font-size: 14px;
+  margin-bottom: 30px;
+  line-height: 1.8;
+}
+
+/* インフォボックス */
+.info-box {
+  background-color: #ff9d87; /* 通常時の背景色 */
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: none;
+  position: relative;
+  transition: background-color 0.3s ease; /* 背景色変更をスムーズにする */
+  box-sizing: border-box;
+}
+
+/* 詳細情報を非表示にする */
+.info-details {
+  display: none;
+  margin-top: 10px;
+  color: #666;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* info-summaryのスタイル */
+.info-summary {
+  cursor: pointer;
+  padding: 10px 0;
+  background-color: #ff9d87; /* 初期状態の背景色 */
+  width: 100%;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+/* ホバー時の変更: info-boxがホバーされた場合、info-summaryの背景色も変更 */
+.info-box:hover,
+.info-box.active {
+  background-color: #deff28; /* info-boxがホバーまたはアクティブな時の背景色変更 */
+}
+
+.info-box:hover .info-summary {
+  background-color: #deff28; /* info-boxがホバーされた場合、info-summaryの背景色も変更 */
+}
+
+.info-summary:hover {
+  background-color: #deff28; /* info-summaryがホバー時に背景色を変更 */
+}
+
+/* 詳細を表示する: info-boxがホバーされた時にinfo-detailsが表示される */
+.info-box:hover .info-details {
+  display: block; /* ホバー時に詳細を表示 */
+}
+
+.info-box.active .info-summary {
+  background-color: #deff28; /* 詳細が開いている時、info-summaryの背景色も#deff28に変更 */
+}
+
+/* ボタンのスタイル */
+.toggle-btn {
+  font-size: 20px;
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  color: #333;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+
+/***追従するトップへ戻るボタン***/
+
+#page-top {
+    position: fixed;
+    right: 5px;
+    bottom: 20px;
+    height: 50px;
+    text-decoration: none;
+    
+    transform: rotate(90deg);
+    font-size: 90%;
+    line-height: 1.5rem;
+    color: #000;
+    padding: 0 0 0 35px; 
+    border-top: solid 1px;
+}
+    
+#page-top::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -1px;
+    left: 0px;
+    width: 15px;
+    border-top: solid 1px;
+    transform: rotate(35deg);
+    transform-origin: left top;
+}
+#page-top.a {
+  background-color: #deff28;
+}
+/***トップへ戻るボタンここまで***/
+
+/* ハンバーガーアイコン */
+.hamburger {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 2001;
+  width: 25px;
+  height: 18px;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.hamburger span {
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* モバイルナビゲーション */
+.mobile-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0);
+  backdrop-filter: blur(25px);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 80px;
+}
+
+.mobile-nav.active {
+  transform: translateX(0);
+}
+
+/* モバイルナビゲーション */
+.mobile-logo {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.mobile-logo img {
+  width: 120px;
+}
+
+/* モバイル版のロゴ画像 */
+@media (max-width: 768px) {
+  .mobile-logo img {
+    content: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logomark.png');
+  }
+}
+
+.mobile-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center; 
+}
+.mobile-nav li {
+  margin: 12px 0;
+}
+.mobile-nav a {
+  font-size: 20px;
+  color: #333;
+  text-decoration: none;
+  line-height: 1.3;
+  display: block;
+}
+.mobile-nav a:hover {
+  color: #ff9d87;
+}
+
+/* モバイルレイアウト対応 */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  header {
+    display: none;
+  }
+  main {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* モバイル版の詳細表示時に背景色を変更 */
+  .info-box.active {
+    background-color: #deff28; /* 詳細が表示されている時、info-boxの背景色を#deff28に変更 */
+  }
+
+  /* モバイル版: info-summaryがactiveクラスを持つと、info-box全体の背景色が変わる */
+  .info-box.active .info-summary {
+    background-color: #deff28;
+  }
+}
+
+
+/* モバイル用ヘッダー */
+#mobileHeader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* 横幅を100%に設定 */
+  height: 60px;
+  background-color: #ebf4f8;
+  display: flex;
+  justify-content: center; /* 横方向にセンター配置 */
+  align-items: center;     /* 縦方向にセンター配置 */
+  padding: 10px 0;         /* 上下に少しスペースを追加 */
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+/* ロゴコンテナ */
+.mobile-logo-container {
+  width: 100%; /* 幅を100%にして親要素内でセンターに配置 */
+  display: flex;
+  justify-content: center; /* 横方向にセンター配置 */
+  align-items: center; /* 縦方向にセンター配置 */
+}
+
+/* ロゴのサイズ調整 */
+.mobile-logo-container img {
+  width: auto;
+  height: 40px; /* 適切な高さに調整 */
+}
+
+
+
+
+
+@media (max-width: 768px) {
+  /* モバイル版のヘッダーを表示 */
+  #mobileHeader {
+    display: block;
+  }
+  /* デスクトップ版ヘッダーを非表示にする */
+  #desktopNav {
+    display: none;
+  }
+}
+
+/* デスクトップ版では .mobile-nav を非表示にする */
+@media (min-width: 769px) {
+  .mobile-nav {
+    display: none; /* デスクトップ版では非表示にする */
+  }
+  #mobileHeader {
+  display: none; 
+}
+}
