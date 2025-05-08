@@ -1,15 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // インフォメーションのサマリー部分を取得
   const toggleBtn = document.querySelector('.toggle-btn');
   const infoDetails = document.querySelector('.info-details');
   
-  if (toggleBtn && infoDetails) {
-    // ボタンクリック時に動作するイベント
-    toggleBtn.addEventListener('click', () => {
-      // info-details に .visible クラスをトグル
-      infoDetails.classList.toggle('visible');
-      
-
-
   // 他の info-summary のクリックイベント
   const infoSummaries = document.querySelectorAll('.info-summary');
 
@@ -30,24 +23,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-});
 
- 
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   const blurOverlay = document.getElementById('blurOverlay');
   
-  // ハンバーガーメニューのトグル処理
   function toggleMenu() {
-    const isActive = mobileNav.classList.contains('active');
     mobileNav.classList.toggle('active');
     blurOverlay.classList.toggle('active');
     hamburger.classList.toggle('active');
   }
 
-  if (hamburger) hamburger.addEventListener('click', toggleMenu);
-  if (blurOverlay) blurOverlay.addEventListener('click', toggleMenu);
+  hamburger.addEventListener('click', toggleMenu);
+  blurOverlay.addEventListener('click', toggleMenu);
 
   const mobileLinks = mobileNav.querySelectorAll('a');
   mobileLinks.forEach(link => {
@@ -56,11 +45,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // 現在のページのURLを取得
   const currentUrl = window.location.href;
-
-  // ナビゲーションリンクを全て取得
   const navLinks = document.querySelectorAll('.nav-list a');
 
-  // 各リンクをチェックして、現在のURLと一致する場合にactiveクラスを追加
   navLinks.forEach(link => {
     if (link.href === currentUrl) {
       link.classList.add('active');
