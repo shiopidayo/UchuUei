@@ -1,0 +1,99 @@
+document.addEventListener('DOMContentLoaded', () => {
+  // インフォメーションのサマリー部分を取得
+  const infoSummaries = document.querySelectorAll('.info-summary');
+  
+// ボタンクリック時に動作するイベント
+toggleBtn.addEventListener('click', () => {
+  // 詳細情報の表示・非表示を切り替える
+  if (infoDetails.style.display === "none" || infoDetails.style.display === "") {
+    infoDetails.style.display = "block";
+    toggleBtn.textContent = "-";  // マイナスに変更
+  } else {
+    infoDetails.style.display = "none";
+    toggleBtn.textContent = "+";  // プラスに変更
+  }
+});
+
+  
+  // クリックイベントを追加（モバイル版対応）
+  infoSummaries.forEach(summary => {
+    summary.addEventListener('click', () => {
+      const details = summary.nextElementSibling; // 詳細部分
+
+      // activeクラスのトグルを追加
+      summary.classList.toggle('active');
+      details.classList.toggle('active'); // 詳細部分にもactiveクラスを付与
+
+      // 詳細の表示/非表示を切り替え
+      if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block'; // 詳細を表示
+        summary.closest('.info-box').classList.add('active'); // info-boxをアクティブにして背景色を変更
+      } else {
+        details.style.display = 'none'; // 詳細を非表示
+        summary.closest('.info-box').classList.remove('active'); // info-boxのアクティブを外す
+      }
+    });
+  });
+
+  // ハンバーガーメニュー関連
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  const blurOverlay = document.getElementById('blurOverlay');
+  
+  // ハンバーガーメニューのトグル処理
+  function toggleMenu() {
+    const isActive = mobileNav.classList.contains('active');
+    mobileNav.classList.toggle('active');
+    blurOverlay.classList.toggle('active');
+    hamburger.classList.toggle('active');
+  }
+
+  if (hamburger) hamburger.addEventListener('click', toggleMenu);
+  if (blurOverlay) blurOverlay.addEventListener('click', toggleMenu);
+
+  const mobileLinks = mobileNav.querySelectorAll('a');
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', toggleMenu);
+  });
+
+   // 現在のページのURLを取得
+  const currentUrl = window.location.href;
+
+  // ナビゲーションリンクを全て取得
+  const navLinks = document.querySelectorAll('.nav-list a');
+
+  // 各リンクをチェックして、現在のURLと一致する場合にactiveクラスを追加
+  navLinks.forEach(link => {
+    if (link.href === currentUrl) {
+      link.classList.add('active');
+    }
+  });
+
+  // スライドショー処理
+  const slides = document.querySelectorAll(".bg-slide");
+  let currentIndex = 0;
+  if (slides.length > 0) {
+    slides[currentIndex].classList.add('active');
+    setInterval(() => {
+      slides[currentIndex].classList.remove("active");
+      currentIndex = (currentIndex + 1) % slides.length;
+      slides[currentIndex].classList.add("active");
+    }, 6000);
+  }
+
+  // フェードインアニメーション
+  const sections = document.querySelectorAll('.section');
+  const catchcopy = document.querySelector('.catchcopy');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  if (catchcopy) observer.observe(catchcopy);
+  sections.forEach(section => observer.observe(section));
+});
