@@ -74,6 +74,7 @@ main {
   width: calc(100% - 200px);
   position: relative;
   overflow: hidden;
+  z-index: 10; 
 }
 
 /* スライドショー */
