@@ -1,21 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // インフォメーションのサマリー部分を取得
-  const infoSummaries = document.querySelectorAll('.info-summary');
+  const toggleBtn = document.querySelector('.toggle-btn');
+  const infoDetails = document.querySelector('.info-details');
   
-// ボタンクリック時に動作するイベント
-toggleBtn.addEventListener('click', () => {
-  // 詳細情報の表示・非表示を切り替える
-  if (infoDetails.style.display === "none" || infoDetails.style.display === "") {
-    infoDetails.style.display = "block";
-    toggleBtn.textContent = "-";  // マイナスに変更
-  } else {
-    infoDetails.style.display = "none";
-    toggleBtn.textContent = "+";  // プラスに変更
+  if (toggleBtn && infoDetails) {
+    // ボタンクリック時に動作するイベント
+    toggleBtn.addEventListener('click', () => {
+      // 詳細情報の表示・非表示を切り替える
+      if (infoDetails.style.visibility === "hidden" || infoDetails.style.visibility === "") {
+        infoDetails.style.visibility = "visible";
+        infoDetails.style.opacity = "1"; // 詳細を表示
+        toggleBtn.textContent = "-";  // マイナスに変更
+      } else {
+        infoDetails.style.visibility = "hidden";
+        infoDetails.style.opacity = "0"; // 詳細を非表示
+        toggleBtn.textContent = "+";  // プラスに変更
+      }
+    });
   }
-});
 
-  
-  // クリックイベントを追加（モバイル版対応）
+  const infoSummaries = document.querySelectorAll('.info-summary');
+
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
       const details = summary.nextElementSibling; // 詳細部分
@@ -25,11 +29,13 @@ toggleBtn.addEventListener('click', () => {
       details.classList.toggle('active'); // 詳細部分にもactiveクラスを付与
 
       // 詳細の表示/非表示を切り替え
-      if (details.style.display === 'none' || details.style.display === '') {
-        details.style.display = 'block'; // 詳細を表示
+      if (details.style.visibility === 'hidden' || details.style.visibility === '') {
+        details.style.visibility = 'visible'; // 詳細を表示
+        details.style.opacity = '1';  // opacityを設定
         summary.closest('.info-box').classList.add('active'); // info-boxをアクティブにして背景色を変更
       } else {
-        details.style.display = 'none'; // 詳細を非表示
+        details.style.visibility = 'hidden'; // 詳細を非表示
+        details.style.opacity = '0';  // opacityを設定
         summary.closest('.info-box').classList.remove('active'); // info-boxのアクティブを外す
       }
     });
@@ -56,7 +62,7 @@ toggleBtn.addEventListener('click', () => {
     link.addEventListener('click', toggleMenu);
   });
 
-   // 現在のページのURLを取得
+  // 現在のページのURLを取得
   const currentUrl = window.location.href;
 
   // ナビゲーションリンクを全て取得
@@ -97,3 +103,4 @@ toggleBtn.addEventListener('click', () => {
   if (catchcopy) observer.observe(catchcopy);
   sections.forEach(section => observer.observe(section));
 });
+
