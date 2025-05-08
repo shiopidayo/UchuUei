@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UchuUei - About</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/favicon.png" type="image/png" />
+  <link rel="stylesheet" href="myon.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+<!-- ハンバーガーメニュー -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- ナビゲーションメニュー（モバイル用） -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-logo">
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" />
+  </div>
+  <ul>
+    <li><a href="index.html">top</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="works.html">works</a></li>
+    <li><a href="contact.html">contact</a></li>
+  </ul>
+</nav>
+
+<!-- 背景ぼかし -->
+<div class="blur-overlay" id="blurOverlay"></div>
+
+<!-- ヘッダー -->
+<header id="desktopNav">
+  <div class="logo-container">
+    <a href="index.html">
+      <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" class="logo" />
+    </a>
+  </div>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="index.html">top</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="works.html">works</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+</header>
+  
+   <!-- モバイル用ヘッダー -->
+<header id="mobileHeader">
+  <div class="mobile-logo-container">
+    <a href="index.html">
+      <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" class="logo" />
+    </a>
+  </div>
+</header>
+
+<!-- メイン -->
+<main id="about">
+  <section class="title-section section">
+    <h1>about</h1>
+    <p class="subtitle">
+      <a href="#shikawa-megumi">me</a> / <a href="#uchuei">UchuUei</a>
+    </p>
+  </section>
+
+  <!-- aboutmeセクション -->
+  <section class="about-section section" id="shikawa-megumi">
+    <div class="about-image">
+      <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/aboutme.png" alt="aboutme" />
+    </div>
+    <div class="about-sectiontext">
+      <h2>SHIOKAWA MEGUMI</h2>
+      <p class="career">1999年 長野生まれ<br>2022年 武蔵野美術大学卒業
+        <br>2023年 武蔵野美術大学造形学部 基礎デザイン学科 助手<br>同年より吹きガラスを始める<br>光や記憶、己 / 他をテーマとし、らくがき、おさんぽ、あるいははなうたのように、その時々のゆらめき / きらめきを作品にしています‎。
+<br>近年はガラスと短歌とニットが表現媒体です。<br>
+犬と恐竜と宇宙に興味があります。</p> <br>
+      <p class="exhibition">展示履歴 xxxx年　xxx展@xxxx<br>xxxx年　xxx展@xxxx<br>xxxx年　xxx展@xxxx</p>
+    </div>
+  </section>
+  
+
+  <!-- projectセクション -->
+  <section class="project-section section" id="uchuei">
+    <div class="about-image">
+      <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/aboutUchu.png" alt="UchuUei Project" />
+    </div>
+    <div class="project-sectiontext">
+      <h2>UchuUei</h2>
+     <p class="career">UchuUei（ウチュウユーエイ）はartist SHIOKAWAが運営するプロジェクトです。<br>イベントなどに参加する際はこちらの名前で出展します。</p>
+    </div>
+  </section>
+</main>
+
+<!-- JS 読み込み -->
+<script src="script.js"></script>
+<script src="about.js"></script>
+
+<!-- ページトップへ戻る -->
+<a href="#about" id="page-top">Top</a>
+
+</body>
+</html>
