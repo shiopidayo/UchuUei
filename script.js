@@ -8,14 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
       // info-details に .visible クラスをトグル
       infoDetails.classList.toggle('visible');
       
-      // ボタンのテキストを切り替え
-      if (infoDetails.classList.contains('visible')) {
-        toggleBtn.textContent = "-";  // マイナスに変更
-      } else {
-        toggleBtn.textContent = "+";  // プラスに変更
-      }
-    });
-  }
+
 
   // 他の info-summary のクリックイベント
   const infoSummaries = document.querySelectorAll('.info-summary');
