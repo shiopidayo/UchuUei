@@ -174,20 +174,6 @@ main {
   background-color: #deff28; /* 詳細が開いている時、info-summaryの背景色も#deff28に変更 */
 }
 
-/* ボタンのスタイル */
-.toggle-btn {
-  font-size: 20px;
-  cursor: pointer;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: transparent;
-  border: none;
-  color: #333;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-
 
 /***追従するトップへ戻るボタン***/
 
