@@ -17,27 +17,28 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+ // 他の info-summary のクリックイベント
+  const infoSummaries = document.querySelectorAll('.info-summary');
 
-  
-  // クリックイベントを追加（モバイル版対応）
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
       const details = summary.nextElementSibling; // 詳細部分
 
-      // activeクラスのトグルを追加
+      // active クラスを切り替え
       summary.classList.toggle('active');
-      details.classList.toggle('active'); // 詳細部分にもactiveクラスを付与
+      details.classList.toggle('active'); // 詳細部分にも active クラスを付与
 
-      // 詳細の表示/非表示を切り替え
-      if (details.style.display === 'none' || details.style.display === '') {
-        details.style.display = 'block'; // 詳細を表示
-        summary.closest('.info-box').classList.add('active'); // info-boxをアクティブにして背景色を変更
+      // .visible クラスの追加/削除
+      details.classList.toggle('visible');
+      if (details.classList.contains('visible')) {
+        summary.closest('.info-box').classList.add('active');
       } else {
-        details.style.display = 'none'; // 詳細を非表示
-        summary.closest('.info-box').classList.remove('active'); // info-boxのアクティブを外す
+        summary.closest('.info-box').classList.remove('active');
       }
     });
   });
+  
+ 
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
