@@ -5,19 +5,19 @@ document.addEventListener('DOMContentLoaded', () => {
   if (toggleBtn && infoDetails) {
     // ボタンクリック時に動作するイベント
     toggleBtn.addEventListener('click', () => {
-      // 詳細情報の表示・非表示を切り替える
-      if (infoDetails.style.visibility === "hidden" || infoDetails.style.visibility === "") {
-        infoDetails.style.visibility = "visible";
-        infoDetails.style.opacity = "1"; // 詳細を表示
+      // info-details に .visible クラスをトグル
+      infoDetails.classList.toggle('visible');
+      
+      // ボタンのテキストを切り替え
+      if (infoDetails.classList.contains('visible')) {
         toggleBtn.textContent = "-";  // マイナスに変更
       } else {
-        infoDetails.style.visibility = "hidden";
-        infoDetails.style.opacity = "0"; // 詳細を非表示
         toggleBtn.textContent = "+";  // プラスに変更
       }
     });
   }
- // 他の info-summary のクリックイベント
+
+  // 他の info-summary のクリックイベント
   const infoSummaries = document.querySelectorAll('.info-summary');
 
   infoSummaries.forEach(summary => {
@@ -37,7 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
+});
+
  
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
