@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UchuUei</title>
+  <link rel="stylesheet" href="myon.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap" rel="stylesheet" />
+  <link rel="icon" href="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/favicon.png" type="image/png" />
+</head>
+<body>
+
+  
+<!-- ハンバーガーメニュー -->
+<div class="hamburger" id="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+
+<!-- ナビゲーションメニュー（モバイル用） -->
+<nav class="mobile-nav" id="mobileNav">
+  <div class="mobile-logo">
+  <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" />
+</div>
+  <ul>
+    <li><a href="#top">top</a></li>
+    <li><a href="about.html">about</a></li>
+    <li><a href="works.html">works</a></li>
+    <li><a href="contact.html">contact</a></li>
+  </ul>
+</nav>
+
+
+
+<!-- 背景ぼかし -->
+<div class="blur-overlay" id="blurOverlay"></div>
+
+<!-- ヘッダー -->
+<header id="desktopNav">
+  <div class="logo-container">
+    <a href="#top">
+      <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" class="logo" />
+    </a>
+  </div>
+  <nav>
+    <ul class="nav-list">
+      <li><a href="#top">top</a></li>
+      <li><a href="about.html">about</a></li>
+      <li><a href="works.html">works</a></li>
+      <li><a href="contact.html">contact</a></li>
+    </ul>
+  </nav>
+</header>
+  
+  <!-- モバイル用ヘッダー -->
+<header id="mobileHeader">
+  <div class="mobile-logo-container">
+    <a href="#top">
+      <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" class="logo" />
+    </a>
+  </div>
+</header>
+
+<!-- メイン -->
+<main id="top">
+  <section class="title-section section">
+    <h1>portfolio of SHIOKAWA</h1>
+    <p class="subtitle">artist　　glass / tanka / knit</p>
+  </section>
+
+  <p class="catchcopy section">
+    らくがき、おさんぽ、あるいははなうたのように、その時々のゆらめき / きらめきを作品にしています
+  </p>
+
+  <!-- スライドショー -->
+  <div class="background-slideshow section">
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/slide1.png" class="bg-slide active" />
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/slide2.png" class="bg-slide" />
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/slide3.png" class="bg-slide" />
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/slide4.png" class="bg-slide" />
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/slide5.png" class="bg-slide" />
+    <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/slide6.png" class="bg-slide" />
+  </div>
+
+ <!-- インフォメーション -->
+<section class="info-section section">
+  <h2>information</h2>
+  <hr />
+  <div class="info-box">
+    <button class="toggle-btn">+</button> <!-- 追加: ボタン -->
+    <p class="info-summary">二人展 mazekoze<br>@吉祥寺/GALLERY IRO</p>
+    <p class="info-details" style="display:none;">2025.7/18~21　12:00-19:00(最終日のみ18:00)吉祥寺/gallery iro 
+      グラフィックデザイナーとガラスアーティストのふたりが作品をとりかえっこして、お互いを手がかりに自分の作品をつくる<br>世界観をまぜこぜにする展示です<br>
+     <a href="https://www.instagram.com/p/DJL_qZ0Syoe/?igsh=MTNjeDhrbzBqMmF2Zw==" target="_blank">Instagram</a> 
+    <a href="https://1-6.jp/mazekoze/" target="_blank">ギャラリーHP</a> </p>
+    <!-- リンク追加 -->
+  </div>
+</section>
+
+
+<!-- JS 読み込み -->
+<script src="script.js"></script>
+<!-- トップへ戻るボタン -->
+<a href="#top" id="page-top">Top</a>
+
+</body>
+</html>
