@@ -120,58 +120,6 @@ main {
   line-height: 1.8;
 }
 
-/* インフォボックス */
-.info-box {
-  background-color: #ff9d87; /* 通常時の背景色 */
-  padding: 20px;
-  margin-bottom: 20px;
-  width: 100%;
-  max-width: none;
-  position: relative;
-  transition: background-color 0.3s ease; /* 背景色変更をスムーズにする */
-  box-sizing: border-box;
-}
-
-/* 詳細情報を非表示にする */
-.info-details {
-  display: none;  /* 初期状態で非表示 */
-  margin-top: 10px;
-  color: #666;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-/* 詳細情報を表示する */
-.info-details.visible {
-  display: block;  /* visible クラスが付与されると表示 */
-}
-/* info-summaryのスタイル */
-.info-summary {
-  cursor: pointer;
-  padding: 10px 0;
-  background-color: #ff9d87; /* 初期状態の背景色 */
-  width: 100%;
-  box-sizing: border-box;
-  transition: background-color 0.3s ease;
-}
-
-/* ホバー時の変更: info-boxがホバーされた場合、info-summaryの背景色も変更 */
-.info-box:hover,
-.info-box.active {
-  background-color: #deff28; /* info-boxがホバーまたはアクティブな時の背景色変更 */
-}
-
-.info-box:hover .info-summary {
-  background-color: #deff28; /* info-boxがホバーされた場合、info-summaryの背景色も変更 */
-}
-
-.info-summary:hover {
-  background-color: #deff28; /* info-summaryがホバー時に背景色を変更 */
-}
-
-.info-box.active .info-summary {
-  background-color: #deff28; /* 詳細が開いている時、info-summaryの背景色も#deff28に変更 */
-}
 
 /***追従するトップへ戻るボタン***/
 
