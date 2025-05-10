@@ -1,0 +1,80 @@
+.subtitle a {
+  text-decoration: none;
+  color: #000;
+}
+
+.subtitle a:hover {
+  color: #ff9d87;
+}
+
+/* about-sectionとproject-sectionのデザイン調整 */
+.about-section, .project-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;  /* 画像とテキストの揃え方を修正 */
+  margin-bottom: 100px;  /* セクション間の余白調整 */
+}
+
+.about-image, .project-section .about-image {
+  margin-right: 50px;
+  width: 40%;  /* 画像の幅を40%に設定 */
+}
+
+.about-image img, .project-section .about-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-sectiontext, .project-section .project-sectiontext {
+  flex: 2;
+  text-align: left;  /* テキストを全て左寄せに */
+}
+
+.about-sectiontext h2, .project-section .project-sectiontext h2 {
+  color: #333;
+  margin-bottom: 10px;
+  display: block;  /* display: block に変更 */
+  border-bottom: 2px solid #ff9d87;  /* カスタムアンダーライン */
+  padding-bottom: 3px;  /* 文字とアンダーラインの間隔 */
+  width: fit-content;  /* アンダーラインをテキストの長さに合わせる */
+}
+
+.career, .exhibition, .project-section .project-sectiontext p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.8;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .about-section, .project-section {
+    flex-direction: column;  /* 両セクションを縦並びに */
+    align-items: center;     /* セクション内の要素を中央に配置 */
+  }
+
+  .about-image, .project-section .about-image {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 80%;  /* モバイル版では画像を80%に広げる */
+  }
+
+  /* モバイル版でh2を中央揃え */
+  .about-sectiontext h2, .project-section .project-sectiontext h2 {
+    text-align: center;  /* h2を中央揃え */
+    width: fit-content;  /* アンダーラインをテキストの長さに合わせる */
+    border-bottom: 2px solid #ff9d87;  /* アンダーラインの長さを調整 */
+    padding-bottom: 3px;
+    margin-right: 0;  /* 右側の余白を削除して調整 */
+  }
+
+  /* p 要素は左揃えのまま、親要素でセンター配置 */
+  .about-sectiontext p, .project-section .project-sectiontext p {
+    text-align: left;  /* pを左揃え */
+    width: 100%;  /* 親要素の幅を100%に設定 */
+    display: block;  /* block に変更 */
+    margin: 0 auto;  /* 中央配置 */
+  }
+}
