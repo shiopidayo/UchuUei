@@ -1,20 +1,26 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // インフォメーションのサマリー部分を取得
   const infoSummaries = document.querySelectorAll('.info-summary');
-
+  
+  // クリックイベントを追加（モバイル版対応）
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
-      const infoBox = summary.closest('.info-box'); // .info-boxの親要素を取得
-      const details = infoBox.querySelector('.info-details'); // 親要素内の.info-detailsを取得
+      const details = summary.nextElementSibling; // 詳細部分
 
-      // .info-detailsの表示/非表示を切り替える
-      details.classList.toggle('visible');  // .visible クラスを切り替えて表示/非表示
+      // activeクラスのトグルを追加
+      summary.classList.toggle('active');
+      details.classList.toggle('active'); // 詳細部分にもactiveクラスを付与
 
-      // .info-boxのactiveクラスを切り替える
-      infoBox.classList.toggle('active');   // .info-boxの背景色を変更
+      // 詳細の表示/非表示を切り替え
+      if (details.style.display === 'none' || details.style.display === '') {
+        details.style.display = 'block'; // 詳細を表示
+        summary.closest('.info-box').classList.add('active'); // info-boxをアクティブにして背景色を変更
+      } else {
+        details.style.display = 'none'; // 詳細を非表示
+        summary.closest('.info-box').classList.remove('active'); // info-boxのアクティブを外す
+      }
     });
   });
-});
-
 
 // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
