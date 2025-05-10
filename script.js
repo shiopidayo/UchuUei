@@ -1,9 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // インフォメーションのサマリー部分を取得
-  const toggleBtn = document.querySelector('.toggle-btn');
-  const infoDetails = document.querySelector('.info-details');
-  
-  // 他の info-summary のクリックイベント
   const infoSummaries = document.querySelectorAll('.info-summary');
 
   infoSummaries.forEach(summary => {
