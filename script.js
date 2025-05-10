@@ -3,21 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
-      const details = summary.nextElementSibling; // 詳細部分
-
-      // active クラスを切り替え
-      summary.classList.toggle('active');
-      details.classList.toggle('active'); // 詳細部分にも active クラスを付与
+      const infoBox = summary.closest('.info-box'); // info-boxの親要素を取得
+      const details = infoBox.querySelector('.info-details'); // 親要素内の.info-detailsを取得
 
       // .visible クラスの追加/削除
-      details.classList.toggle('visible');
+      details.classList.toggle('visible');  // 詳細情報を表示
+      summary.classList.toggle('active');   // サマリー部分のスタイル変更
+
+      // active クラスをトグル
       if (details.classList.contains('visible')) {
-        summary.closest('.info-box').classList.add('active');
+        infoBox.classList.add('active');  // info-boxをアクティブにする
       } else {
-        summary.closest('.info-box').classList.remove('active');
+        infoBox.classList.remove('active');  // info-boxを非アクティブにする
       }
     });
   });
+});
 
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
