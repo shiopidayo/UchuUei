@@ -10,11 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
       details.classList.toggle('visible');  // 詳細情報を表示
       summary.classList.toggle('active');   // サマリー部分のスタイル変更
 
-      // active クラスをトグル
+      // 詳細情報の表示/非表示を直接制御
       if (details.classList.contains('visible')) {
-        infoBox.classList.add('active');  // info-boxをアクティブにする
+        details.style.display = 'block'; // 詳細を表示
+        infoBox.classList.add('active'); // info-boxをアクティブにする
       } else {
-        infoBox.classList.remove('active');  // info-boxを非アクティブにする
+        details.style.display = 'none'; // 詳細を非表示
+        infoBox.classList.remove('active'); // info-boxを非アクティブにする
       }
     });
   });
