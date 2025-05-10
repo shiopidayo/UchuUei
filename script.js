@@ -1,26 +1,4 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const infoSummaries = document.querySelectorAll('.info-summary');
 
-  infoSummaries.forEach(summary => {
-    summary.addEventListener('click', () => {
-      const infoBox = summary.closest('.info-box'); // info-boxの親要素を取得
-      const details = infoBox.querySelector('.info-details'); // 親要素内の.info-detailsを取得
-
-      // .visible クラスの追加/削除
-      details.classList.toggle('visible');  // 詳細情報を表示
-      summary.classList.toggle('active');   // サマリー部分のスタイル変更
-
-      // 詳細情報の表示/非表示を直接制御
-      if (details.classList.contains('visible')) {
-        details.style.display = 'block'; // 詳細を表示
-        infoBox.classList.add('active'); // info-boxをアクティブにする
-      } else {
-        details.style.display = 'none'; // 詳細を非表示
-        infoBox.classList.remove('active'); // info-boxを非アクティブにする
-      }
-    });
-  });
-});
 
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
