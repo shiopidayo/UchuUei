@@ -37,6 +37,7 @@
   font-size: 12px;
   margin-left: 5px;
   background-color: #ff9d87
+  padding: 5px 10px
 }
 
 .contact-form .optional {
@@ -44,6 +45,7 @@
   font-size: 12px;
   margin-left: 5px;
   background-color: #deff28
+  padding: 5px 10px
 }
 
 .contact-form button {
