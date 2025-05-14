@@ -24,7 +24,6 @@
 .about-image img, .project-section .about-image img {
   width: 100%;
   height: auto;
-  border-radius: 10px;
 }
 
 .about-sectiontext, .project-section .project-sectiontext {
