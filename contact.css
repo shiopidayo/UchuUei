@@ -33,15 +33,17 @@
 }
 
 .contact-form .required {
-  color:#ff9d87; 
+  color:#000; 
   font-size: 12px;
   margin-left: 5px;
+  background-color: #ff9d87
 }
 
 .contact-form .optional {
-  color: #deff28; 
+  color: #000; 
   font-size: 12px;
   margin-left: 5px;
+  background-color: #deff28
 }
 
 .contact-form button {
