@@ -104,7 +104,7 @@ main {
 /* インフォボックス */
 .info-box {
   background-color: #ff9d87; /* 通常時の背景色 */
-  padding: 20px;
+  padding:10px 20px;
   margin-bottom: 20px;
   width: 100%;
   max-width: none;
