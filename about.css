@@ -29,8 +29,7 @@
 .about-sectiontext, .project-sectiontext {
   flex: 2;
   text-align: left;  /* テキストを全て左寄せに */
-  padding-top: 20px;  /* 上の余白を少し減らす */
-  margin-top: 20px; 
+
 }
 
 .about-sectiontext h2, .project-sectiontext h2 {
