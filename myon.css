@@ -77,6 +77,18 @@ main {
   z-index: 10; 
 }
 
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px); /* 少し下から表示 */
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+/* visibleクラスが追加されると表示される */
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0); /* 元の位置に戻る */
+}
+
 /* スライドショー */
 .background-slideshow {
   position: relative;
