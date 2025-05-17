@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+
 // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
