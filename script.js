@@ -63,3 +63,4 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[currentIndex].classList.add("active");
     }, 6000);
   }
+});
