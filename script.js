@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 6000);
   }
 
-  //フェードイン
 document.addEventListener('DOMContentLoaded', () => {
   // ページ内のすべての.fade-inクラスを対象にする
   const fadeInElements = document.querySelectorAll('.fade-in');
