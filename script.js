@@ -63,19 +63,22 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 6000);
   }
 
-  // フェードインアニメーション
-  const sections = document.querySelectorAll('.section');
-  const catchcopy = document.querySelector('.catchcopy');
+  //フェードイン
+document.addEventListener('DOMContentLoaded', () => {
+  // ページ内のすべての.fade-inクラスを対象にする
+  const fadeInElements = document.querySelectorAll('.fade-in');
+
+  // IntersectionObserverの設定
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+        entry.target.classList.add('visible'); // visibleクラスを追加して表示
       }
     });
   }, {
-    threshold: 0.1
+    threshold: 0.1 // 画面の10%が見えた時にトリガー
   });
 
-  if (catchcopy) observer.observe(catchcopy);
-  sections.forEach(section => observer.observe(section));
+  // すべての.fade-in要素を監視
+  fadeInElements.forEach(element => observer.observe(element));
 });
