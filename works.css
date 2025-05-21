@@ -6,3 +6,7 @@
 .subtitle a:hover {
   color: #ff9d87;
 }
+.subtitle a[href="#boundary"] {
+  background-color: #deff28; 
+  padding: 2px 4px;          
+}
