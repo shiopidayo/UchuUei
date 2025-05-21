@@ -65,3 +65,6 @@
     font-size: 18px;  /* ボタンの文字サイズを大きく */
   }
 }
+#page-top {
+  z-index: 1000;         
+}
