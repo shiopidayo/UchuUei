@@ -10,3 +10,7 @@
   background-color: #deff28; 
   padding: 2px 4px;          
 }
+
+#page-top {
+  z-index: 1000;         
+}
