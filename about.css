@@ -41,7 +41,10 @@
   width: fit-content;  /* アンダーラインをテキストの長さに合わせる */
 }
 
-.career, .exhibition, .project-section .project-sectiontext p {
+.about-sectiontext p,
+.project-sectiontext p,
+.career,
+.exhibition {
   font-size: 14px;
   color: #333;
   margin-bottom: 20px;
