@@ -78,3 +78,6 @@
     margin: 0 auto;  /* 中央配置 */
   }
 }
+#page-top {
+  z-index: 1000;         
+}
