@@ -76,6 +76,10 @@ main {
   overflow: hidden;
   z-index: 10; 
 }
+.subtitle a {
+  text-decoration: none;
+  color: #000;
+}
 
 /* 初期状態では透明 */
 .fade-in {
