@@ -80,6 +80,9 @@ main {
   text-decoration: none;
   color: #000;
 }
+.subtitle a:hover {
+  color: #ff9d87;
+}
 
 /* 初期状態では透明 */
 .fade-in {
