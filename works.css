@@ -1,12 +1,12 @@
-.subtitle a {
+.subtitle a .glass a .tanka a .knit a {
   text-decoration: none;
   color: #000;
 }
 
-.subtitle a:hover {
+.subtitle a .glass a .tanka a .knit a:hover {
   color: #ff9d87;
 }
-.subtitle a[href="#boundary"] {
+.glass a[href="#boundary"] {
   background-color: #deff28; 
   padding: 2px 4px;          
 }
