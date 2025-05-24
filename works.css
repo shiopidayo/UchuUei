@@ -3,7 +3,10 @@
   color: #000;
 }
 
-.subtitle a,.glass a,.tanka a,.knit a:hover {
+.subtitle a:hover,
+.glass a:hover,
+.tanka a:hover,
+.knit a:hover {
   color: #ff9d87;
 }
 .glass a[href="#boundary"] {
