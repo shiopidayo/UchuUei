@@ -1,14 +1,6 @@
-/* 全体 */
-body {
-  margin: 0;
-  font-family: 'Zen Kaku Gothic New', sans-serif;
-  background-color: #eaf6fb;
-  color: #000;
-}
-
 /* works全体のタイトルセクション */
 .title-section {
-  padding: 80px 40px 40px 80px; /* 左側80px = worksの位置 */
+  padding: 80px 40px 40px 80px; /* worksの位置：左80px */
 }
 
 /* subtitleのリンク */
@@ -19,14 +11,12 @@ body {
 
 /* glassセクション見出し */
 .glass {
-  padding-left: 80px; /* worksと同じラインに揃える */
   margin-top: 40px;
 }
 
-/* グリッドラッパー */
+/* glass以下のギャラリー全体を包むラッパー */
 .works-gallery {
-  padding-left: 80px; /* worksと同じラインに揃える */
-  box-sizing: border-box;
+  margin-top: 20px;
 }
 
 /* 作品グリッド */
@@ -100,9 +90,16 @@ body {
   opacity: 1;
 }
 
+/* レイアウト揃えのための共通ラッパー（worksに合わせる） */
+.align-with-works {
+  padding-left: 80px;
+  box-sizing: border-box;
+}
+
 /* モバイル対応 */
 @media (max-width: 768px) {
-  .title-section, .glass, .works-gallery {
+  .title-section,
+  .align-with-works {
     padding-left: 20px;
     padding-right: 20px;
   }
