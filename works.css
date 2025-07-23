@@ -40,6 +40,7 @@
   border-radius: 0;
   display: block;
   transition: opacity 0.3s ease;
+  align-items: flex-start;
 }
 
 /* オーバーレイ */
