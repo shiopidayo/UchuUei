@@ -1,111 +1,58 @@
-/* works全体のタイトルセクション */
-.title-section {
-  padding: 80px 40px 40px 80px; /* worksの位置：左80px */
+/* works grid layout (揃え用) */
+.works-section {
+  padding-left: 40px; /* worksタイトルに揃える */
 }
 
-/* subtitleのリンク */
-.subtitle a {
-  text-decoration: none;
-  color: inherit;
+.works-section h2 {
+  margin-bottom: 20px;
+  font-size: 20px;
 }
 
-/* glassセクション見出し */
-.glass {
-  margin-top: 40px;
-}
-
-/* glass以下のギャラリー全体を包むラッパー */
-.works-gallery {
-  margin-top: 20px;
-}
-
-/* 作品グリッド */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  justify-content: start;
+  max-width: 1000px;
 }
 
-/* 各作品 */
-.work-item {
-  position: relative;
-  width: 100%;
-  text-align: left;
-}
-
-/* リンク内ブロック */
 .work-item a {
   display: block;
   position: relative;
-  text-decoration: none;
-  color: inherit;
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* 画像 */
 .work-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: opacity 0.3s ease;
 }
 
-/* オーバーレイ */
-.work-item a::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0);
-  transition: background 0.3s ease;
-  z-index: 1;
-  pointer-events: none;
-}
-
-/* タイトル（hover時左上） */
 .work-title {
   position: absolute;
   top: 8px;
   left: 8px;
-  margin: 0;
-  font-size: 14px;
   color: white;
+  font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: 2;
   pointer-events: none;
 }
 
-/* hover時 */
-.work-item a:hover::before {
-  background: rgba(0, 0, 0, 0.3);
-}
-
 .work-item a:hover .work-title {
   opacity: 1;
 }
 
-/* レイアウト揃えのための共通ラッパー（worksに合わせる） */
-.align-with-works {
-  padding-left: 80px;
-  box-sizing: border-box;
-}
-
-/* モバイル対応 */
 @media (max-width: 768px) {
-  .title-section,
-  .align-with-works {
-    padding-left: 20px;
-    padding-right: 20px;
-  }
   .works-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 }
+
 
