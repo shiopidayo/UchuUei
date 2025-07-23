@@ -1,37 +1,66 @@
-/* works grid layout (揃え用) */
-.works-section {
-  padding-left: 40px; /* worksタイトルに揃える */
+/* 左揃え用ラッパー */
+.works-container {
+  width: 100%;
+  padding-left: 40px; /* about や works の見出しと揃える */
+  box-sizing: border-box;
 }
 
-.works-section h2 {
-  margin-bottom: 20px;
-  font-size: 20px;
-}
-
+/* グリッド */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
-  max-width: 1000px;
+  justify-content: start;
+  align-items: start;
 }
 
+/* 各作品 */
+.work-item {
+  position: relative;
+  width: 100%;
+  text-align: left;
+}
+
+/* リンクブロック */
 .work-item a {
   display: block;
   position: relative;
+  text-decoration: none;
+  color: inherit;
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  text-decoration: none;
-  color: inherit;
 }
 
+/* サムネイル画像 */
 .work-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  border-radius: 0;
+  transition: opacity 0.3s ease;
 }
 
+/* オーバーレイ（初期は透明） */
+.work-item a::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);  
+  transition: background 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ホバーでオーバーレイを暗く */
+.work-item a:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+/* タイトル（初期非表示） */
 .work-title {
   position: absolute;
   top: 8px;
@@ -39,19 +68,39 @@
   color: white;
   font-size: 14px;
   opacity: 0;
-  transition: opacity 0.3s ease;
   z-index: 2;
+  transition: opacity 0.3s ease;
   pointer-events: none;
+  margin: 0;
 }
 
+/* ホバー時にタイトル表示 */
 .work-item a:hover .work-title {
   opacity: 1;
 }
 
-@media (max-width: 768px) {
+/* 非表示カテゴリ */
+.tanka, .knit {
+  display: none;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 1024px) {
+  .works-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
   .works-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+
+  .works-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
