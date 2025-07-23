@@ -12,14 +12,14 @@
 </head>
 <body>
 
-<!-- 🍔 ハンバーガーメニュー -->
+<!-- 🍔 -->
 <div class="hamburger" id="hamburger">
   <span></span>
   <span></span>
   <span></span>
 </div>
 
-<!-- モバイルナビ -->
+<!-- mnav -->
 <nav class="mobile-nav" id="mobileNav">
   <div class="mobile-logo">
     <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" />
@@ -32,10 +32,10 @@
   </ul>
 </nav>
 
-<!-- 背景ぼかし -->
+<!-- boke -->
 <div class="blur-overlay" id="blurOverlay"></div>
 
-<!-- デスクトップナビ -->
+<!-- header -->
 <header id="desktopNav">
   <div class="logo-container">
     <a href="index.html">
@@ -52,7 +52,7 @@
   </nav>
 </header>
 
-<!-- モバイルロゴ -->
+<!-- mheader -->
 <header id="mobileHeader">
   <div class="mobile-logo-container">
     <a href="index.html">
@@ -62,38 +62,48 @@
 </header>
 
 <main id="works" class="fade-in">
-  <section class="title-section section page-block">
+  <section class="title-section section">
     <h1>works</h1>
     <p class="subtitle">
       <a href="#glass">glass</a> / <a href="#tanka">tanka</a> / <a href="#knit">knit</a>
     </p>
   </section>
 
-  <div class="glass" id="glass">
-    <div class="works-container page-block">
+  <!-- glassセクション -->
+  <div class="align-with-works">
+    <div class="glass" id="glass">
       <h3>glass</h3>
+    </div>
+
+    <div class="works-gallery">
       <div class="works-grid">
+        <!-- 作品1 -->
         <div class="work-item">
           <a href="boundary.html">
             <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/works/boundary.jpg" alt="boundary" />
             <p class="work-title">boundary</p>
           </a>
         </div>
+
+        <!-- 作品2 -->
         <div class="work-item">
           <a href="pop.html">
             <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/works/boundary.jpg" alt="pop" />
             <p class="work-title">pop</p>
           </a>
         </div>
-        <div class="work-item"></div> <!-- 空欄で3列目固定 -->
+
+        <!-- ここに追加作品を続けてください -->
       </div>
     </div>
   </div>
 
+  <!-- 非表示セクション -->
   <div style="display: none;">
     <div class="tanka" id="tanka">
       <h3>tanka</h3>
     </div>
+
     <div class="knit" id="knit">
       <h3>knit</h3>
     </div>
@@ -105,7 +115,7 @@
 <script src="works.js"></script>
 
 <a href="#works" id="page-top">Top</a>
-
 </body>
 </html>
+
 
