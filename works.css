@@ -32,7 +32,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;      
+  border-radius: 0;        /* 角丸なし */
   display: block;
   transition: opacity 0.3s ease;
 }
@@ -40,5 +40,49 @@
 /* ---------- hover時に暗くなるオーバーレイ ---------- */
 .work-item a::before {
   content: "";
-  position: absol
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0);  /* 初期は透明 */
+  transition: background 0.3s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ---------- タイトル（hover時に左上に表示） ---------- */
+.work-title {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  margin: 0;
+  font-size: 14px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* ---------- hover時の表示効果 ---------- */
+.work-item a:hover::before {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.work-item a:hover .work-title {
+  opacity: 1;
+}
+
+/* ---------- モバイル対応 ---------- */
+@media (max-width: 768px) {
+  .works-grid {
+    grid-template-columns: 1fr;  /* スマホは1列 */
+    gap: 20px;
+  }
+
+  .work-item {
+    max-width: 100%;
+  }
+}
+
 
