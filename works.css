@@ -1,9 +1,8 @@
-
-/* ラッパー（ナビに揃えて余白含め統一） */
-.works-container {
+/* 共通レイアウトブロック：h1 も画像も揃える */
+.page-block {
   max-width: 1000px;
-  margin-left: 180px;       /* ナビ幅と揃える */
-  padding: 0 40px;           /* トップページと同じ */
+  margin-left: 180px;  /* ナビ幅と揃える */
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
@@ -23,7 +22,7 @@
   text-align: left;
 }
 
-/* リンク全体 */
+/* リンクブロック */
 .work-item a {
   display: block;
   position: relative;
@@ -44,7 +43,7 @@
   transition: opacity 0.3s ease;
 }
 
-/* hover時の暗くなるレイヤー */
+/* オーバーレイ（hover時に暗く） */
 .work-item a::before {
   content: "";
   position: absolute;
@@ -57,7 +56,7 @@
   pointer-events: none;
 }
 
-/* タイトル（左上） */
+/* タイトル（左上に出現） */
 .work-title {
   position: absolute;
   top: 8px;
@@ -75,13 +74,14 @@
 .work-item a:hover::before {
   background: rgba(0, 0, 0, 0.3);
 }
+
 .work-item a:hover .work-title {
   opacity: 1;
 }
 
 /* モバイル対応 */
 @media (max-width: 768px) {
-  .works-container {
+  .page-block {
     margin-left: 0;
     padding: 0 20px;
   }
