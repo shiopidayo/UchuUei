@@ -1,28 +1,29 @@
-/* ---------- グリッド外側ラッパー（左揃え用） ---------- */
+
+/* ラッパー（ナビに揃えて余白含め統一） */
 .works-container {
-  max-width: 1000px;         /* 全体の幅を制限（任意で調整） */
-  margin-left: 180px;        /* ← デスクトップナビ（左ナビ）と揃える */
-  padding: 0 20px;
+  max-width: 1000px;
+  margin-left: 180px;       /* ナビ幅と揃える */
+  padding: 0 40px;           /* トップページと同じ */
   box-sizing: border-box;
 }
 
-/* ---------- 作品グリッド ---------- */
+/* 作品グリッド */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 常に3列 */
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
   justify-content: start;
   align-items: start;
 }
 
-/* ---------- 各作品アイテム ---------- */
+/* 各作品 */
 .work-item {
   position: relative;
   width: 100%;
   text-align: left;
 }
 
-/* ---------- リンク全体 ---------- */
+/* リンク全体 */
 .work-item a {
   display: block;
   position: relative;
@@ -33,7 +34,7 @@
   overflow: hidden;
 }
 
-/* ---------- サムネイル画像 ---------- */
+/* 画像 */
 .work-item img {
   width: 100%;
   height: 100%;
@@ -43,7 +44,7 @@
   transition: opacity 0.3s ease;
 }
 
-/* ---------- オーバーレイ ---------- */
+/* hover時の暗くなるレイヤー */
 .work-item a::before {
   content: "";
   position: absolute;
@@ -56,7 +57,7 @@
   pointer-events: none;
 }
 
-/* ---------- タイトル：hover時に左上表示 ---------- */
+/* タイトル（左上） */
 .work-title {
   position: absolute;
   top: 8px;
@@ -70,16 +71,15 @@
   pointer-events: none;
 }
 
-/* ---------- hover時にオーバーレイとタイトル表示 ---------- */
+/* hover時 */
 .work-item a:hover::before {
   background: rgba(0, 0, 0, 0.3);
 }
-
 .work-item a:hover .work-title {
   opacity: 1;
 }
 
-/* ---------- モバイル対応 ---------- */
+/* モバイル対応 */
 @media (max-width: 768px) {
   .works-container {
     margin-left: 0;
