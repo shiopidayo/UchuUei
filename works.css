@@ -1,17 +1,21 @@
-/* 作品一覧グリッド */
 .works-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* デスクトップで3列程度 */
+  gap: 40px;
   padding: 40px 20px;
+  justify-items: center; /* 各アイテムを中央に配置 */
 }
 
+/* 各作品アイテム */
 .work-item {
   position: relative;
   text-align: center;
   overflow: hidden;
+  width: 100%;
+  max-width: 300px; /* 各アイテムの最大幅を揃える */
 }
 
+/* リンク全体 */
 .work-item a {
   display: block;
   position: relative;
@@ -19,26 +23,28 @@
   color: inherit;
 }
 
+/* サムネイル画像 */
 .work-item img {
-  width: 100%;
-  aspect-ratio: 1 / 1;
+  width: 95%;               /* 画像を少し左に寄せる */
+  margin-left: -5%;         /* 左にスライド */
+  aspect-ratio: 1 / 1;      /* 正方形トリミング */
   object-fit: cover;
-  border-radius: 0; /* ←角丸を無効に */
+  border-radius: 0;         /* 角丸なし */
   transition: 0.3s ease;
 }
 
-/* オーバーレイ効果 */
+/* hover時の暗くなるオーバーレイ */
 .work-item a::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0); /* 通常は透明 */
+  background: rgba(0, 0, 0, 0); /* 初期は透明 */
   transition: background 0.3s ease;
   z-index: 1;
 }
 
-/* タイトル（最初は非表示） */
+/* 作品タイトル：左上に浮かび上がるように表示 */
 .work-title {
   position: absolute;
   top: 8px;
@@ -51,14 +57,12 @@
   z-index: 2;
 }
 
-/* hover時の変化 */
+/* hover時にタイトル表示＋暗くなる */
 .work-item a:hover::before {
-  background: rgba(0, 0, 0, 0.4); /* 少し暗くする */
+  background: rgba(0, 0, 0, 0.4);
 }
 
 .work-item a:hover .work-title {
   opacity: 1;
 }
-
-
 
