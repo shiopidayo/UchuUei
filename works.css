@@ -1,35 +1,37 @@
-.tanka, .knit {
-  display: none;
-}
-
-h3 {
-margin-top: 40px;
-  }
-#page-top {
-  z-index: 1000;         
+/* 作品一覧グリッド */
+.works-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  padding: 40px 20px;
 }
 
 .work-item {
-  width: 200px;
-  margin: 20px;
   text-align: center;
+}
+
+.work-item a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .work-item img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 1 / 1; /* 正方形に統一 */
+  object-fit: cover;
   border-radius: 8px;
-  cursor: pointer;
+  transition: transform 0.3s ease;
 }
 
-.gallery {
-  display: none;
-  margin-top: 10px;
+.work-item img:hover {
+  transform: scale(1.02);
 }
 
-.gallery.active {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.work-title {
+  margin-top: 8px;
+  font-size: 16px;
+  line-height: 1.4;
+  color: #333;
 }
+
 
