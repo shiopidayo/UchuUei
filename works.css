@@ -1,56 +1,61 @@
+/* グリッドラッパー（左揃え用） */
+.works-container {
+  width: 100%;
+  padding-left: 40px;  /* glass見出しと揃える */
+  box-sizing: border-box;
+}
 
-/* ---------- 作品グリッド ---------- */
+/* 作品グリッド */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 常に3列固定 */
   gap: 40px;
-  padding: 40px 20px;
-  justify-content: start;  /* ← グリッド全体を左揃え */
+  justify-content: start;
   align-items: start;
 }
 
-/* ---------- 各作品アイテム ---------- */
+/* 各作品 */
 .work-item {
   position: relative;
   width: 100%;
   text-align: left;
 }
 
-/* ---------- リンク全体（画像＋タイトル） ---------- */
+/* リンク内ブロック */
 .work-item a {
   display: block;
   position: relative;
   text-decoration: none;
   color: inherit;
   width: 100%;
-  aspect-ratio: 1 / 1;     /* 正方形で表示 */
-  overflow: hidden;        /* オーバーレイはみ出し防止 */
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
 }
 
-/* ---------- サムネイル画像 ---------- */
+/* 画像 */
 .work-item img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;        /* 角丸なし */
+  border-radius: 0;
   display: block;
   transition: opacity 0.3s ease;
 }
 
-/* ---------- hover時に暗くなるオーバーレイ ---------- */
+/* オーバーレイ */
 .work-item a::before {
   content: "";
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0);  /* 初期は透明 */
+  background: rgba(0, 0, 0, 0);
   transition: background 0.3s ease;
   z-index: 1;
   pointer-events: none;
 }
 
-/* ---------- タイトル（hover時に左上に表示） ---------- */
+/* タイトル（hover時左上） */
 .work-title {
   position: absolute;
   top: 8px;
@@ -64,7 +69,7 @@
   pointer-events: none;
 }
 
-/* ---------- hover時の表示効果 ---------- */
+/* hover時 */
 .work-item a:hover::before {
   background: rgba(0, 0, 0, 0.3);
 }
@@ -73,13 +78,12 @@
   opacity: 1;
 }
 
-/* ---------- モバイル対応 ---------- */
+/* モバイル対応 */
 @media (max-width: 768px) {
   .works-grid {
-    grid-template-columns: 1fr;  /* スマホは1列 */
+    grid-template-columns: 1fr;
     gap: 20px;
   }
-
   .work-item {
     max-width: 100%;
   }
