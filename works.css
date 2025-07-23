@@ -1,12 +1,11 @@
-/* 共通レイアウトブロック：h1 も画像も揃える */
-.page-block {
-  max-width: 1000px;
-  margin-left: 180px;  /* ナビ幅と揃える */
-  padding: 0 40px;
+/* サムネイル全体の横位置調整 */
+.works-container {
+  width: 100%;
+  padding-left: 32px; /* ← これで見出し "works" の位置に合わせる */
   box-sizing: border-box;
 }
 
-/* 作品グリッド */
+/* グリッド */
 .works-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -15,14 +14,14 @@
   align-items: start;
 }
 
-/* 各作品 */
+/* 各アイテム */
 .work-item {
   position: relative;
   width: 100%;
   text-align: left;
 }
 
-/* リンクブロック */
+/* リンク */
 .work-item a {
   display: block;
   position: relative;
@@ -38,12 +37,12 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: 0;
   display: block;
+  border-radius: 0;
   transition: opacity 0.3s ease;
 }
 
-/* オーバーレイ（hover時に暗く） */
+/* オーバーレイ */
 .work-item a::before {
   content: "";
   position: absolute;
@@ -56,7 +55,7 @@
   pointer-events: none;
 }
 
-/* タイトル（左上に出現） */
+/* タイトル */
 .work-title {
   position: absolute;
   top: 8px;
@@ -81,18 +80,14 @@
 
 /* モバイル対応 */
 @media (max-width: 768px) {
-  .page-block {
-    margin-left: 0;
-    padding: 0 20px;
-  }
-
   .works-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
 
-  .work-item {
-    max-width: 100%;
+  .works-container {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
 
