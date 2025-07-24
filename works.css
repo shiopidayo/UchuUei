@@ -60,6 +60,15 @@
   background: rgba(0, 0, 0, 0.3);
 }
 
+/* ホバー時に画像を拡大（なめらかに） */
+.work-item img {
+  transition: transform 0.3s ease;
+}
+
+.work-item img:hover {
+  transform: scale(1.02);
+}
+
 /* タイトル（初期非表示） */
 .work-title {
   position: absolute;
