@@ -1,0 +1,47 @@
+/* detail.css に追加または detail-opiliens.css として分けてもOK */
+
+/* 全体レイアウト */
+.work-detail-section {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+/* 画像グループ（グリッド表示） */
+.detail-image-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 正方形対応 */
+  gap: 20px;
+}
+
+/* 画像スタイル */
+.detail-image-group img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 0;
+  display: block;
+}
+
+/* 説明文 */
+.detail-description p {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.8;
+  text-align: left;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .work-detail-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .detail-image-group {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
