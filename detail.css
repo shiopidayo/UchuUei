@@ -76,3 +76,6 @@
 }
 
 
+#page-top {
+  z-index: 9999;         
+}
