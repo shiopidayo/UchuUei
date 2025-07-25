@@ -1,5 +1,13 @@
 /* 全体の横幅調整（この指定は変えない） */
 #detail {
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: border-box;
+}
+
+/* worksと同じ左寄せ余白 */
+.works-container {
+  width: 100%;
   padding-left: 40px;
   padding-right: 40px;
   box-sizing: border-box;
@@ -15,20 +23,19 @@
   margin-bottom: 10px;
 }
 
-/* サブタイトル */
 .subtitle {
   font-size: 14px;
   color: #666;
 }
 
-/* 画像グループ：左揃えのためにラッパーでコントロール */
+/* 左揃えの画像群ラッパー */
 .work-detail-section {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-/* グリッドで画像を横に3つ並べる */
+/* 画像グリッド */
 .detail-image-group {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -47,7 +54,7 @@
   transition: transform 0.3s ease;
 }
 
-/* テキスト部分 */
+/* テキスト説明 */
 .detail-description {
   font-size: 14px;
   color: #333;
@@ -64,7 +71,7 @@
 }
 
 @media (max-width: 600px) {
-  #detail {
+  .works-container {
     padding-left: 20px;
     padding-right: 20px;
   }
@@ -74,4 +81,5 @@
     gap: 20px;
   }
 }
+
 
