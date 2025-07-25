@@ -1,33 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // インフォメーションのサマリー部分を取得
+  // インフォメーションのサマリー部分を取得（info-summary）
   const infoSummaries = document.querySelectorAll('.info-summary');
-  
-  // クリックイベントを追加（モバイル版対応）
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
-      const details = summary.nextElementSibling; // 詳細部分
-
-      // activeクラスのトグルを追加
+      const details = summary.nextElementSibling;
       summary.classList.toggle('active');
-      details.classList.toggle('active'); // 詳細部分にもactiveクラスを付与
+      details.classList.toggle('active');
 
-      // 詳細の表示/非表示を切り替え
       if (details.style.display === 'none' || details.style.display === '') {
-        details.style.display = 'block'; // 詳細を表示
-        summary.closest('.info-box').classList.add('active'); // info-boxをアクティブにして背景色を変更
+        details.style.display = 'block';
+        summary.closest('.info-box').classList.add('active');
       } else {
-        details.style.display = 'none'; // 詳細を非表示
-        summary.closest('.info-box').classList.remove('active'); // info-boxのアクティブを外す
+        details.style.display = 'none';
+        summary.closest('.info-box').classList.remove('active');
       }
     });
   });
 
-
-// ハンバーガーメニュー関連
+  // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   const blurOverlay = document.getElementById('blurOverlay');
-  
+
   function toggleMenu() {
     mobileNav.classList.toggle('active');
     blurOverlay.classList.toggle('active');
@@ -42,10 +36,9 @@ document.addEventListener('DOMContentLoaded', () => {
     link.addEventListener('click', toggleMenu);
   });
 
-  // 現在のページのURLを取得
+  // 現在ページのナビリンクに active クラスを付ける
   const currentUrl = window.location.href;
   const navLinks = document.querySelectorAll('.nav-list a');
-
   navLinks.forEach(link => {
     if (link.href === currentUrl) {
       link.classList.add('active');
@@ -63,24 +56,28 @@ document.addEventListener('DOMContentLoaded', () => {
       slides[currentIndex].classList.add("active");
     }, 6000);
   }
-});
 
-document.addEventListener('DOMContentLoaded', () => {
-  // ページ内のすべての.fade-inクラスを対象にする
+  // トップへ戻るボタン処理
+  const topBtn = document.getElementById('page-top');
+  if (topBtn) {
+    topBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  // フェードイン表示
   const fadeInElements = document.querySelectorAll('.fade-in');
-
-  // IntersectionObserverの設定
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
-        entry.target.classList.add('visible'); // visibleクラスを追加して表示
+        entry.target.classList.add('visible');
       }
     });
   }, {
-    threshold: 0.1 // 画面の10%が見えた時にトリガー
+    threshold: 0.1
   });
 
-  // すべての.fade-in要素を監視
   fadeInElements.forEach(element => observer.observe(element));
 });
 
