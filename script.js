@@ -84,11 +84,3 @@ document.addEventListener('DOMContentLoaded', () => {
   fadeInElements.forEach(element => observer.observe(element));
 });
 
-const topBtn = document.getElementById('page-top');
-  if (topBtn) {
-    topBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
-  }
-});
