@@ -47,10 +47,6 @@
   transition: transform 0.3s ease;
 }
 
-/* ホバー時の拡大 */
-.detail-image-group img:hover {
-  transform: scale(1.02);
-}
 
 /* テキスト部分 */
 .detail-description {
