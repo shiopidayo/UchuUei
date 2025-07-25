@@ -11,12 +11,12 @@
 </head>
 <body>
 
-<!-- 🍔 ハンバーガー -->
+<!-- 🍔 -->
 <div class="hamburger" id="hamburger">
   <span></span><span></span><span></span>
 </div>
 
-<!-- モバイルナビ -->
+<!-- mnav -->
 <nav class="mobile-nav" id="mobileNav">
   <div class="mobile-logo">
     <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/logo.png" alt="UchuUei ロゴ" />
@@ -29,10 +29,10 @@
   </ul>
 </nav>
 
-<!-- ぼかし背景 -->
+<!-- boke -->
 <div class="blur-overlay" id="blurOverlay"></div>
 
-<!-- デスクトップナビ -->
+<!-- header -->
 <header id="desktopNav">
   <div class="logo-container">
     <a href="index.html">
@@ -49,7 +49,7 @@
   </nav>
 </header>
 
-<!-- モバイルヘッダー -->
+<!-- mheader -->
 <header id="mobileHeader">
   <div class="mobile-logo-container">
     <a href="index.html">
@@ -58,7 +58,6 @@
   </div>
 </header>
 
-<!-- 本文 -->
 <main id="detail" class="fade-in">
   <div class="works-container">
     <section class="title-section section">
@@ -66,27 +65,33 @@
       <p class="subtitle">2024〜 / glass / incense holders</p>
     </section>
 
-    <section class="work-detail-section">
-      <div class="detail-image-group">
-        <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/opiliens/1_2.jpg" alt="opiliens 001" />
-        <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/opiliens/2_1.jpg" alt="opiliens 002" />
-        <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/opiliens/3_1.jpg" alt="opiliens 003" />
+    <div class="works-gallery">
+      <div class="works-grid">
+        <div class="work-item">
+          <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/opiliens/1_2.jpg" alt="opiliens 001" />
+        </div>
+        <div class="work-item">
+          <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/opiliens/2_1.jpg" alt="opiliens 002" />
+        </div>
+        <div class="work-item">
+          <img src="https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/opiliens/3_1.jpg" alt="opiliens 003" />
+        </div>
       </div>
-      <div class="detail-description">
-        <p>
-          「opiliens（オピリアンズ）」は、エイリアンのような、ちょっと不思議でかわいいガラスのお香立てです。<br>
-          コロンとしたかたちで、どこか生きているような雰囲気があり、お部屋の中をちいさくキュートに彩ります。<br>
-          廃棄される予定だったガラスのかけらをあつめて色や形を組み合わせ、再構成し、ひとつひとつ手作業で制作しています。
-        </p>
-      </div>
-    </section>
+    </div>
+
+    <div class="detail-description">
+      <p>
+        「opiliens（オピリアンズ）」は、エイリアンのような、ちょっと不思議でかわいいガラスのお香立てです。<br>
+        コロンとしたかたちで、どこか生きているような雰囲気があり、お部屋の中をちいさくキュートに彩ります。<br>
+        廃棄される予定だったガラスのかけらをあつめて色や形を組み合わせ、再構成し、ひとつひとつ手作業で制作しています。
+      </p>
+    </div>
   </div>
 </main>
 
-<!-- JS -->
 <script src="script.js"></script>
 <script src="works.js"></script>
-<a href="#detail" id="page-top">Top</a>
+<a href="#opiliens" id="page-top">Top</a>
 </body>
 </html>
 
