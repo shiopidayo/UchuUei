@@ -92,3 +92,6 @@
   align-items: center; /* ← 中央揃え（ズレ防止）*/
 }
 
+#desktopNav nav {
+  width: 75.32px; /* 他のページと揃える */
+}
