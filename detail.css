@@ -55,6 +55,15 @@
   margin-top: 40px;
 }
 
+/* mazekoze専用：画像比率を縦に（正方形を解除） */
+#mazekoze .work-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: unset;
+  object-fit: contain; /* cover だとトリミングされるので注意 */
+}
+
+
 /* レスポンシブ */
 @media (max-width: 1024px) {
   .works-grid {
