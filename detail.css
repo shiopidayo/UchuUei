@@ -46,10 +46,9 @@
   border-radius: 0;
 }
 
-
 #mazekoze .image-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* ←最大4列に変更 */
   gap: 12px;
   margin: 0 auto;
   padding: 0 16px;
@@ -62,46 +61,23 @@
   display: block;
   border-radius: 0;
 }
-#mazekoze .image-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-  margin: 0 auto;
-  padding: 0 16px;
-}
 
-/* 通常の画像スタイル */
-#mazekoze .image-grid img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  display: block;
-  border-radius: 0;
-}
-
-
-@media (max-width: 1200px) {
-  #mazekoze .image-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-
-@media (max-width: 900px) {
+/* 画面幅が1000px以下のとき：3列 */
+@media (max-width: 1000px) {
   #mazekoze .image-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
-
-@media (max-width: 600px) {
+/* 画面幅が700px以下のとき：2列 */
+@media (max-width: 700px) {
   #mazekoze .image-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-
-@media (max-width: 400px) {
+/* 画面幅が450px以下のとき：1列 */
+@media (max-width: 450px) {
   #mazekoze .image-grid {
     grid-template-columns: 1fr;
   }
