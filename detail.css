@@ -46,6 +46,23 @@
   border-radius: 0;
 }
 
+
+#mazekoze .image-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* worksと揃える */
+  gap: 20px;
+  margin-top: 40px;
+}
+
+#mazekoze .image-item img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: unset;
+  object-fit: contain;
+  display: block;
+}
+
+
 /* テキスト説明 */
 .detail-description {
   font-size: 14px;
@@ -53,14 +70,6 @@
   line-height: 1.8;
   max-width: 720px;
   margin-top: 40px;
-}
-
-/* mazekoze専用：画像比率を縦に（正方形を解除） */
-#mazekoze .work-item img {
-  width: 100%;
-  height: auto;
-  aspect-ratio: unset;
-  object-fit: contain; /* cover だとトリミングされるので注意 */
 }
 
 
