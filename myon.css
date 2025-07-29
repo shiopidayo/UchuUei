@@ -401,3 +401,7 @@ main {
   display: none; 
 }
 }
+
+body {
+  cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym57.cur'), auto;
+}
