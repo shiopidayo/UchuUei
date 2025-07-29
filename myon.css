@@ -377,7 +377,9 @@ main {
   height: 40px; /* 適切な高さに調整 */
 }
 
-
+body {
+  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto;
+}
 
 
 
@@ -400,8 +402,4 @@ main {
   #mobileHeader {
   display: none; 
 }
-}
-
-body {
-  cursor: url('https://cur.cursors-4u.net/symbols/sym-1/sym57.cur'), auto;
 }
