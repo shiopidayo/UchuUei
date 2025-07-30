@@ -9,6 +9,9 @@ body {
   flex-direction: row;
 }
 
+* {
+  cursor: url("image/cursor.png") 4 4, auto;
+}
 /* 左サイドのデスクトップ用ナビ */
 #desktopNav {
   position: fixed;
