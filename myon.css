@@ -10,7 +10,7 @@ body {
 }
 
 * {
-  cursor: url("image/cursor.png") 4 4, auto;
+  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
 }
 /* 左サイドのデスクトップ用ナビ */
 #desktopNav {
