@@ -17,7 +17,7 @@ html, body, * {
 a, a:hover, button, input, textarea, select,
 .nav-list a, .mobile-nav a, .info-summary, .info-box,
 #page-top, .hamburger, .social-icons img {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto !important;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAACXBIWXMAAAsSAAALEgHS3X78AAABsUlEQVRoge1YO07DQBB9gygiu4Cj8BEVSHGfKGUkOqNEXCPmFFAQeQ9CgwQ1BeEe6SiHxos2xjaOPGMWa5800sb2zpu3O5PxmpgZ/x0Hfx2ABIIIXxBE+IIgwhcEEb5AVQQRMRGpvxKEnWgCEY2dnydaPIDuTiR2QERvijz66ZQbo00RasIb9FIT2lAV4Z4aVfsFM4sYgBUAnk0n93ZsAcDaCgBfz+e5FC8zy4kohHwH/Lhef1aIYCtUkpckPxS4KVPll4jsPRIjBXDYZXLRlRMAGF9dHtvrdQuTG4ObNMXF+dl7HEVPzy+v2+L5uy5x7J3zTZYbw23wmx8AK/GaqCO7XS5bBd2EzeajSUwqJoL73wluG9deImqEVZFv64LPjREJumydmh0zk2sAQERHLaYmVXO7BCJmqOkT5RSS7hNirx22R8ymkwcA2XKxGDn37DADgDiKR+X5nSC5IuVdKdeBFpf2hwJ3sUS7tAtNEZmi7x2EQ5E3UCzsnQ6vxaNe2M5CnWr6Fz1P/HBe9A7NfyZgIDXR6VDUApmyfwDK6dQXBpFOQYQvCCJ8QRDhCwYh4gto//IWRF+fPgAAAABJRU5ErkJggg==") 4 4, auto !important;
 }
 * {
   cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto;
@@ -25,7 +25,7 @@ a, a:hover, button, input, textarea, select,
 
 .fade-in,
 .fade-in.visible {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto !important;
+  cursor: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADEAAAAxCAYAAABznEEcAAAACXBIWXMAAAsSAAALEgHS3X78AAABsUlEQVRoge1YO07DQBB9gygiu4Cj8BEVSHGfKGUkOqNEXCPmFFAQeQ9CgwQ1BeEe6SiHxos2xjaOPGMWa5800sb2zpu3O5PxmpgZ/x0Hfx2ABIIIXxBE+IIgwhcEEb5AVQQRMRGpvxKEnWgCEY2dnydaPIDuTiR2QERvijz66ZQbo00RasIb9FIT2lAV4Z4aVfsFM4sYgBUAnk0n93ZsAcDaCgBfz+e5FC8zy4kohHwH/Lhef1aIYCtUkpckPxS4KVPll4jsPRIjBXDYZXLRlRMAGF9dHtvrdQuTG4ObNMXF+dl7HEVPzy+v2+L5uy5x7J3zTZYbw23wmx8AK/GaqCO7XS5bBd2EzeajSUwqJoL73wluG9deImqEVZFv64LPjREJumydmh0zk2sAQERHLaYmVXO7BCJmqOkT5RSS7hNirx22R8ymkwcA2XKxGDn37DADgDiKR+X5nSC5IuVdKdeBFpf2hwJ3sUS7tAtNEZmi7x2EQ5E3UCzsnQ6vxaNe2M5CnWr6Fz1P/HBe9A7NfyZgIDXR6VDUApmyfwDK6dQXBpFOQYQvCCJ8QRDhCwYh4gto//IWRF+fPgAAAABJRU5ErkJggg==") 4 4, auto !important;
 }
 
 
