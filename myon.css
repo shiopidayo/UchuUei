@@ -9,6 +9,15 @@ body {
   flex-direction: row;
 }
 
+html, body, * {
+  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto !important;
+}
+
+a, a:hover, button, input, textarea, select,
+.nav-list a, .mobile-nav a, .info-summary, .info-box,
+#page-top, .hamburger, .social-icons img {
+  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto !important;
+}
 * {
   cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
 }
