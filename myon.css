@@ -22,25 +22,12 @@ a, a:hover, button, input, textarea, select,
   cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
 }
 
-/* 基本すべての要素にカーソルを適用 */
-* {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
+.fade-in,
+.fade-in.visible {
+  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto !important;
 }
 
-/* リンク（hover時も） */
-a, a:hover {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
-}
 
-/* ボタン系（使ってない場合も念のため） */
-button, button:hover {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
-}
-
-/* info-summary もクリック可能なので忘れずに */
-.info-summary {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto;
-}
 /* 左サイドのデスクトップ用ナビ */
 #desktopNav {
   position: fixed;
