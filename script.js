@@ -16,7 +16,20 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+  
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
 
+      // 💡カーソルを再指定（保険）
+      document.body.style.setProperty('cursor', "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto", 'important');
+      document.documentElement.style.setProperty('cursor', "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto", 'important');
+    }
+  });
+}, {
+  threshold: 0.1
+});
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
