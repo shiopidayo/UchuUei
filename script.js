@@ -16,13 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
 
-      
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
@@ -72,12 +66,24 @@ const observer = new IntersectionObserver((entries) => {
     });
   }
 
-  // フェードイン表示
+  // フェードイン表示 & カーソル再適用
   const fadeInElements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
+
+        // カーソル再適用（上書き防止）
+        document.body.style.setProperty(
+          'cursor',
+          "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto",
+          'important'
+        );
+        document.documentElement.style.setProperty(
+          'cursor',
+          "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto",
+          'important'
+        );
       }
     });
   }, {
@@ -86,4 +92,3 @@ const observer = new IntersectionObserver((entries) => {
 
   fadeInElements.forEach(element => observer.observe(element));
 });
-
