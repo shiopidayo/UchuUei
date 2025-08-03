@@ -16,7 +16,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-
+  
+setInterval(() => {
+  document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
+  document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
+}, 200);
+  
   // ハンバーガーメニュー関連
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
