@@ -133,9 +133,7 @@ nav .works-submenu a {
   transition: transform 0.3s ease;
 }
 
-.gallery-boundary .work-item img:hover {
-  transform: scale(1.02);
-}
+
 
 /* モバイル対応 */
 @media (max-width: 768px) {
