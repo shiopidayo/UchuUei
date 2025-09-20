@@ -111,48 +111,7 @@ nav .works-submenu a {
   opacity: 1;
 }
 
-/* boundary専用ギャラリー */
-.gallery-boundary .image-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 60px;
-  padding-left: 40px;
-  padding-right: 40px;
-  box-sizing: border-box;
-}
 
-.gallery-boundary .work-item {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.gallery-boundary .work-item img {
-  width: calc(33.333% - 13.33px);
-  height: auto;
-  object-fit: cover;
-  display: block;
-  border-radius: 0;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-  transition: transform 0.3s ease;
-}
-
-.gallery-boundary .work-item img:hover {
-  transform: scale(1.02);
-}
-
-/* モバイル対応 */
-@media (max-width: 768px) {
-  .gallery-boundary .work-item {
-    flex-direction: column;
-  }
-
-  .gallery-boundary .work-item img {
-    width: 100%;
-  }
-}
 
 
 /* 非表示カテゴリ */
