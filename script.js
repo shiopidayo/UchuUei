@@ -70,31 +70,4 @@ setInterval(() => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
-
-  
-
-document.addEventListener("click", function (e) {
-  for (let i = 0; i < 8; i++) {
-    const star = document.createElement("span");
-    star.className = "star-sparkle";
-    star.textContent = "✦";  // 星マーク
-
-    const angle = Math.random() * 2 * Math.PI;
-    const distance = Math.random() * 40 + 10;
-    const x = Math.cos(angle) * distance + "px";
-    const y = Math.sin(angle) * distance + "px";
-
-    star.style.left = `${e.clientX}px`;
-    star.style.top = `${e.clientY}px`;
-    star.style.setProperty("--x", x);
-    star.style.setProperty("--y", y);
-
-    document.body.appendChild(star);
-
-    setTimeout(() => {
-      star.remove();
-    }, 600);
-  }
-});
-  
 });
