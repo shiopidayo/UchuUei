@@ -1,30 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // fade-in
-
-
-  const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, {
-  threshold: 0.1
-});
-
-document.querySelectorAll('.section, .catchcopy').forEach(el => {
-  observer.observe(el);
-});
-  
-  // info-summary
+  // （info-summary）
   const infoSummaries = document.querySelectorAll('.info-summary');
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
       const details = summary.nextElementSibling;
       summary.classList.toggle('active');
       details.classList.toggle('active');
-
       if (details.style.display === 'none' || details.style.display === '') {
         details.style.display = 'block';
         summary.closest('.info-box').classList.add('active');
@@ -35,13 +16,13 @@ document.querySelectorAll('.section, .catchcopy').forEach(el => {
     });
   });
 
-  // cursor
+  // カーソル画像を定期的にセット（強制維持）
   setInterval(() => {
     document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
     document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
   }, 200);
 
-  // 🍔 mobile nav
+  // ハンバーガーメニュー
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   const blurOverlay = document.getElementById('blurOverlay');
@@ -52,15 +33,15 @@ document.querySelectorAll('.section, .catchcopy').forEach(el => {
     hamburger.classList.toggle('active');
   }
 
-  hamburger?.addEventListener('click', toggleMenu);
-  blurOverlay?.addEventListener('click', toggleMenu);
+  hamburger.addEventListener('click', toggleMenu);
+  blurOverlay.addEventListener('click', toggleMenu);
 
-  const mobileLinks = mobileNav?.querySelectorAll('a') || [];
+  const mobileLinks = mobileNav.querySelectorAll('a');
   mobileLinks.forEach(link => {
     link.addEventListener('click', toggleMenu);
   });
 
-  // active nav
+  // ナビゲーションの現在位置を強調
   const currentUrl = window.location.href;
   const navLinks = document.querySelectorAll('.nav-list a');
   navLinks.forEach(link => {
@@ -69,7 +50,7 @@ document.querySelectorAll('.section, .catchcopy').forEach(el => {
     }
   });
 
-  // slideshow
+  // スライドショー
   const slides = document.querySelectorAll(".bg-slide");
   let currentIndex = 0;
   if (slides.length > 0) {
@@ -81,7 +62,7 @@ document.querySelectorAll('.section, .catchcopy').forEach(el => {
     }, 6000);
   }
 
-  // scroll to top
+  // ページトップへ戻る
   const topBtn = document.getElementById('page-top');
   if (topBtn) {
     topBtn.addEventListener('click', (e) => {
@@ -89,5 +70,21 @@ document.querySelectorAll('.section, .catchcopy').forEach(el => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // フェードインアニメーション
+  const sections = document.querySelectorAll('.section');
+  const catchcopy = document.querySelector('.catchcopy');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  if (catchcopy) observer.observe(catchcopy);
+  sections.forEach(section => observer.observe(section));
 });
 
