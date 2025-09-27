@@ -1,7 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
   // fade-in
   const fadeIns = document.querySelectorAll('.fade-in');
-  fadeIns.forEach(el => el.classList.add('visible'));
+  fadeIns.forEach(el => {
+    el.classList.remove('visible'); // 一旦削除（戻ってきたときも効かせるため）
+    void el.offsetWidth; // DOM再計算でトリガー再構成
+    el.classList.add('visible'); // 再付与して再アニメーション
+  });
 
   // info-summary
   const infoSummaries = document.querySelectorAll('.info-summary');
@@ -76,4 +80,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
 
