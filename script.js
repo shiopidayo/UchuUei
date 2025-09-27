@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // インフォメーションのサマリー部分を取得（info-summary）
+  // （info-summary）
   const infoSummaries = document.querySelectorAll('.info-summary');
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
@@ -22,7 +22,7 @@ setInterval(() => {
   document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
 }, 200);
   
-  // ハンバーガーメニュー関連
+  //🍔
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   const blurOverlay = document.getElementById('blurOverlay');
@@ -41,7 +41,7 @@ setInterval(() => {
     link.addEventListener('click', toggleMenu);
   });
 
-  // 現在ページのナビリンクに active クラスを付ける
+  // 
   const currentUrl = window.location.href;
   const navLinks = document.querySelectorAll('.nav-list a');
   navLinks.forEach(link => {
@@ -50,7 +50,7 @@ setInterval(() => {
     }
   });
 
-  // スライドショー処理
+  // スライド
   const slides = document.querySelectorAll(".bg-slide");
   let currentIndex = 0;
   if (slides.length > 0) {
@@ -62,7 +62,7 @@ setInterval(() => {
     }, 6000);
   }
 
-  // トップへ戻るボタン処理
+  // top
   const topBtn = document.getElementById('page-top');
   if (topBtn) {
     topBtn.addEventListener('click', (e) => {
@@ -71,14 +71,14 @@ setInterval(() => {
     });
   }
 
-  // フェードイン表示 & カーソル再適用
+  // 
   const fadeInElements = document.querySelectorAll('.fade-in');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
 
-        // カーソル再適用（上書き防止）
+        // 
         document.body.style.setProperty(
           'cursor',
           "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto",
@@ -96,4 +96,26 @@ setInterval(() => {
   });
 
   fadeInElements.forEach(element => observer.observe(element));
+});
+document.addEventListener("click", function (e) {
+  for (let i = 0; i < 8; i++) {
+    const sparkle = document.createElement("div");
+    sparkle.className = "sparkle";
+
+    const angle = Math.random() * 2 * Math.PI;
+    const distance = Math.random() * 40 + 20; // 
+    const x = Math.cos(angle) * distance + "px";
+    const y = Math.sin(angle) * distance + "px";
+
+    sparkle.style.left = `${e.clientX}px`;
+    sparkle.style.top = `${e.clientY}px`;
+    sparkle.style.setProperty("--x", x);
+    sparkle.style.setProperty("--y", y);
+
+    document.body.appendChild(sparkle);
+
+    setTimeout(() => {
+      sparkle.remove();
+    }, 600);
+  }
 });
