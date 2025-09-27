@@ -13,30 +13,26 @@ body {
   cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto !important;
 }
 
-.sparkle {
+.star-sparkle {
   position: fixed;
-  width: 8px;
-  height: 8px;
-  background: white;
-  border: 1px solid black;
-  border-radius: 50%;
-  box-shadow: 0 0 2px black;
+  font-size: 18px;
+  color: white;
+  text-shadow: 0 0 2px black, 0 0 4px black;
   pointer-events: none;
   z-index: 9999;
-  animation: sparkle-fly 0.6s ease-out forwards;
+  animation: sparkle-fade 0.6s ease-out forwards;
 }
 
-@keyframes sparkle-fly {
+@keyframes sparkle-fade {
   0% {
     opacity: 1;
     transform: scale(1) translate(0, 0);
   }
   100% {
     opacity: 0;
-    transform: scale(0.5) translate(var(--x), var(--y));
+    transform: scale(0.4) translate(var(--x), var(--y));
   }
 }
-
 
 
 /* 左サイドのデスクトップ用ナビ */
