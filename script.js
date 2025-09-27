@@ -1,10 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // 
+  // fade-in
   const fadeIns = document.querySelectorAll('.fade-in');
   fadeIns.forEach(el => el.classList.add('visible'));
 
-document.addEventListener('DOMContentLoaded', () => {
-  // （info-summary）
+  // info-summary
   const infoSummaries = document.querySelectorAll('.info-summary');
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
@@ -21,13 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
-  
-setInterval(() => {
-  document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
-  document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
-}, 200);
-  
-  //🍔
+
+  // cursor
+  setInterval(() => {
+    document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
+    document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
+  }, 200);
+
+  // 🍔 mobile nav
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   const blurOverlay = document.getElementById('blurOverlay');
@@ -38,15 +38,15 @@ setInterval(() => {
     hamburger.classList.toggle('active');
   }
 
-  hamburger.addEventListener('click', toggleMenu);
-  blurOverlay.addEventListener('click', toggleMenu);
+  hamburger?.addEventListener('click', toggleMenu);
+  blurOverlay?.addEventListener('click', toggleMenu);
 
-  const mobileLinks = mobileNav.querySelectorAll('a');
+  const mobileLinks = mobileNav?.querySelectorAll('a') || [];
   mobileLinks.forEach(link => {
     link.addEventListener('click', toggleMenu);
   });
 
-  // 
+  // active nav
   const currentUrl = window.location.href;
   const navLinks = document.querySelectorAll('.nav-list a');
   navLinks.forEach(link => {
@@ -55,7 +55,7 @@ setInterval(() => {
     }
   });
 
-  // スライド
+  // slideshow
   const slides = document.querySelectorAll(".bg-slide");
   let currentIndex = 0;
   if (slides.length > 0) {
@@ -67,7 +67,7 @@ setInterval(() => {
     }, 6000);
   }
 
-  // top
+  // scroll to top
   const topBtn = document.getElementById('page-top');
   if (topBtn) {
     topBtn.addEventListener('click', (e) => {
@@ -76,3 +76,4 @@ setInterval(() => {
     });
   }
 });
+
