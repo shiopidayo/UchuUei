@@ -1,4 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // 
+  const fadeIns = document.querySelectorAll('.fade-in');
+  fadeIns.forEach(el => el.classList.add('visible'));
+
+document.addEventListener('DOMContentLoaded', () => {
   // （info-summary）
   const infoSummaries = document.querySelectorAll('.info-summary');
   infoSummaries.forEach(summary => {
