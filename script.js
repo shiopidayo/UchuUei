@@ -71,51 +71,28 @@ setInterval(() => {
     });
   }
 
-  // 
-  const fadeInElements = document.querySelectorAll('.fade-in');
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
+  
 
-        // 
-        document.body.style.setProperty(
-          'cursor',
-          "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto",
-          'important'
-        );
-        document.documentElement.style.setProperty(
-          'cursor',
-          "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.cur') 4 4, auto",
-          'important'
-        );
-      }
-    });
-  }, {
-    threshold: 0.1
-  });
-
-  fadeInElements.forEach(element => observer.observe(element));
-});
 document.addEventListener("click", function (e) {
   for (let i = 0; i < 8; i++) {
-    const sparkle = document.createElement("div");
-    sparkle.className = "sparkle";
+    const star = document.createElement("span");
+    star.className = "star-sparkle";
+    star.textContent = "✦";  // 星マーク
 
     const angle = Math.random() * 2 * Math.PI;
-    const distance = Math.random() * 40 + 20; // 
+    const distance = Math.random() * 40 + 10;
     const x = Math.cos(angle) * distance + "px";
     const y = Math.sin(angle) * distance + "px";
 
-    sparkle.style.left = `${e.clientX}px`;
-    sparkle.style.top = `${e.clientY}px`;
-    sparkle.style.setProperty("--x", x);
-    sparkle.style.setProperty("--y", y);
+    star.style.left = `${e.clientX}px`;
+    star.style.top = `${e.clientY}px`;
+    star.style.setProperty("--x", x);
+    star.style.setProperty("--y", y);
 
-    document.body.appendChild(sparkle);
+    document.body.appendChild(star);
 
     setTimeout(() => {
-      sparkle.remove();
+      star.remove();
     }, 600);
   }
 });
