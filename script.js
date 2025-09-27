@@ -1,11 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // （info-summary）
+  // fade-in
+  const fadeIns = document.querySelectorAll('.fade-in');
+  fadeIns.forEach(el => el.classList.add('visible'));
+
+  // info-summary
   const infoSummaries = document.querySelectorAll('.info-summary');
   infoSummaries.forEach(summary => {
     summary.addEventListener('click', () => {
       const details = summary.nextElementSibling;
       summary.classList.toggle('active');
       details.classList.toggle('active');
+
       if (details.style.display === 'none' || details.style.display === '') {
         details.style.display = 'block';
         summary.closest('.info-box').classList.add('active');
@@ -16,13 +21,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // カーソル画像を定期的にセット（強制維持）
+  // cursor
   setInterval(() => {
     document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
     document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
   }, 200);
 
-  // ハンバーガーメニュー
+  // 🍔 mobile nav
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
   const blurOverlay = document.getElementById('blurOverlay');
@@ -33,15 +38,15 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.classList.toggle('active');
   }
 
-  hamburger.addEventListener('click', toggleMenu);
-  blurOverlay.addEventListener('click', toggleMenu);
+  hamburger?.addEventListener('click', toggleMenu);
+  blurOverlay?.addEventListener('click', toggleMenu);
 
-  const mobileLinks = mobileNav.querySelectorAll('a');
+  const mobileLinks = mobileNav?.querySelectorAll('a') || [];
   mobileLinks.forEach(link => {
     link.addEventListener('click', toggleMenu);
   });
 
-  // ナビゲーションの現在位置を強調
+  // active nav
   const currentUrl = window.location.href;
   const navLinks = document.querySelectorAll('.nav-list a');
   navLinks.forEach(link => {
@@ -50,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // スライドショー
+  // slideshow
   const slides = document.querySelectorAll(".bg-slide");
   let currentIndex = 0;
   if (slides.length > 0) {
@@ -62,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 6000);
   }
 
-  // ページトップへ戻る
+  // scroll to top
   const topBtn = document.getElementById('page-top');
   if (topBtn) {
     topBtn.addEventListener('click', (e) => {
