@@ -1,8 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
   // fade-in
-  const fadeIns = document.querySelectorAll('.fade-in');
-  fadeIns.forEach(el => el.classList.add('visible'));
 
+
+  const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+document.querySelectorAll('.section, .catchcopy').forEach(el => {
+  observer.observe(el);
+});
+  
   // info-summary
   const infoSummaries = document.querySelectorAll('.info-summary');
   infoSummaries.forEach(summary => {
