@@ -9,7 +9,7 @@ body {
   flex-direction: row;
 }
 
-* {
+html, body, header {
   cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto;
 }
 
