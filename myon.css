@@ -9,9 +9,10 @@ body {
   flex-direction: row;
 }
 
-* {
-  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto !important;
+html, body {
+  cursor: url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto;
 }
+
 
 
 /* 左サイドのデスクトップ用ナビ */
