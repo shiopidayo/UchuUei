@@ -2,9 +2,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // fade-in
   const fadeIns = document.querySelectorAll('.fade-in');
   fadeIns.forEach(el => {
-    el.classList.remove('visible'); // 一旦削除（戻ってきたときも効かせるため）
-    void el.offsetWidth; // DOM再計算でトリガー再構成
-    el.classList.add('visible'); // 再付与して再アニメーション
+    el.classList.remove('visible');
+    void el.offsetWidth;
+    el.classList.add('visible');
   });
 
   // info-summary
@@ -79,6 +79,17 @@ document.addEventListener('DOMContentLoaded', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  // 
+  document.addEventListener('mousedown', () => {
+    document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor_c.png') 4 4, auto";
+  });
+
+  document.addEventListener('mouseup', () => {
+    document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
+  });
+
 });
+
 
 
