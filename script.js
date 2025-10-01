@@ -80,15 +80,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // 
-  document.addEventListener('mousedown', () => {
-    document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor_c.png') 4 4, auto";
-  });
+ let isClicking = false;
 
-  document.addEventListener('mouseup', () => {
+setInterval(() => {
+  if (!isClicking) {
     document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
-  });
+    document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor.png') 4 4, auto";
+  }
+}, 200);
 
+document.addEventListener('mousedown', () => {
+  isClicking = true;
+  document.body.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor_c.png') 4 4, auto";
+  document.documentElement.style.cursor = "url('https://raw.githubusercontent.com/shiopidayo/UchuUei/main/image/cursor_c.png') 4 4, auto";
+});
+
+document.addEventListener('mouseup', () => {
+  isClicking = false;
+});
 });
 
 
