@@ -293,13 +293,13 @@ main {
   width: 20px;
   height: 20px;
   object-fit: contain;
-  transition: opacity 0.3s;
+  transition: opacity 0.3s, transform 0.3s ease;
 }
 
 .social-icons img:hover {
   opacity: 0.7;
+  transform: scale(1.2);
 }
-
 
 /* モバイル版のロゴ画像 */
 @media (max-width: 768px) {
