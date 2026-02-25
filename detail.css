@@ -106,6 +106,12 @@ nav .works-submenu a {
   }
 }
 
+#dawn .works-grid .work-item img {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 /* boundary専用ギャラリー */
 .gallery-boundary .image-grid {
   display: flex;
