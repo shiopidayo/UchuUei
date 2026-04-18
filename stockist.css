@@ -4,11 +4,6 @@
   padding: 120px 40px;
 }
 
-.stockist-section h1 {
-  font-size: 32px;
-  font-weight: 400;
-  margin-bottom: 60px;
-}
 
 /* リスト */
 .stockist-list {
@@ -53,10 +48,7 @@
     padding: 100px 20px;
   }
 
-  .stockist-section h1 {
-    font-size: 24px;
-    margin-bottom: 40px;
-  }
+ 
 
   .stockist-list {
     gap: 40px;
