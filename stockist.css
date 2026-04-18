@@ -1,0 +1,65 @@
+/* ===== stockist ===== */
+
+.stockist-section {
+  padding: 120px 40px;
+}
+
+.stockist-section h1 {
+  font-size: 32px;
+  font-weight: 400;
+  margin-bottom: 60px;
+}
+
+/* リスト */
+.stockist-list {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* 各店舗 */
+.stockist-item h2 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.stockist-item .location {
+  font-size: 14px;
+  opacity: 0.6;
+  margin-bottom: 10px;
+}
+
+.stockist-item .text {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.stockist-item a {
+  font-size: 14px;
+  text-decoration: underline;
+}
+
+/* hover */
+.stockist-item a:hover {
+  opacity: 0.6;
+}
+
+/* ===== mobile ===== */
+
+@media (max-width: 768px) {
+
+  .stockist-section {
+    padding: 100px 20px;
+  }
+
+  .stockist-section h1 {
+    font-size: 24px;
+    margin-bottom: 40px;
+  }
+
+  .stockist-list {
+    gap: 40px;
+  }
+
+}
