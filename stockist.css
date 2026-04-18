@@ -1,11 +1,5 @@
 /* ===== stockist ===== */
 
-.stockist-section {
-  padding: 120px 40px;
-}
-
-
-/* リスト */
 .stockist-list {
   display: flex;
   flex-direction: column;
@@ -43,15 +37,7 @@
 /* ===== mobile ===== */
 
 @media (max-width: 768px) {
-
-  .stockist-section {
-    padding: 100px 20px;
-  }
-
- 
-
   .stockist-list {
     gap: 40px;
   }
-
 }
