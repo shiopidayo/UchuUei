@@ -164,6 +164,11 @@ main {
   transition: background-color 0.3s ease;
 }
 
+.info-box.past,
+.info-box.past .info-summary {
+  background-color: #d9d2f0;
+}
+
 /* ホバー時の変更: info-boxがホバーされた場合、info-summaryの背景色も変更 */
 .info-box:hover,
 .info-box.active {
